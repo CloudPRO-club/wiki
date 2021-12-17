@@ -46,6 +46,7 @@ const config = {
       'target_architecture',
       'architecture_components',
       'ui_components',
+      'development_plan',
     ],
     collapsedNav: [
     ],

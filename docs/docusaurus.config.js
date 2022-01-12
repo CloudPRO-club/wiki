@@ -8,13 +8,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'CLOUD PRO club',
   tagline: 'Welcome',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://github.com/CloudPRO-club/wiki',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'CloudPRO-club', // Usually your GitHub org/user name.
+  projectName: 'project-architecture', // Usually your repo name.
+  // projectName: 'docusaurus', // Usually your repo name.
 
   presets: [
     [
@@ -24,13 +25,13 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/CloudPRO-club/wiki',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/CloudPRO-club/wiki',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -57,7 +58,7 @@ const config = {
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           // {
-          //   href: 'https://github.com/facebook/docusaurus',
+          //   href: 'https://github.com/CloudPRO-club/wiki',
           //   label: 'GitHub',
           //   position: 'right',
           // },

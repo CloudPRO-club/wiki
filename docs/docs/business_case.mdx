@@ -1,0 +1,76 @@
+---
+title: "Business case"
+sidebar_label: "Business case"
+sidebar_position: 1
+metaTitle: "This is the title tag Business Case page"
+metaDescription: "This is the meta description Business Case page"
+---
+import {DiagramBox} from '../src/components/'
+
+# Test diagram use Mermaid.js
+<DiagramBox>{
+`
+classDiagram
+class GeoPointType {
+ <<enumeration>>
+  BROWNFIELD
+  OGWELL
+  CELL_TOWER
+  NUCLEAR_REACTOR
+  SUPERFUND
+}
+class GeoPoint {
+  -UUID id
+  +GeoPointType type
+  +GeographyPoint location
+  -UUID metadata references metadata(id)
+  +Datetime createdAt
+}
+class GeographyPoint {
+  <<interface>>
+  +GeoJSON geojson
+  +Int srid
+  +Float longitude
+  +Float latitude
+}
+class NearbyPoint {
+ <<Interface>>
+  -UUID id references GeoPoint(id)
+  +GeoPointType GeoPoint::type
+  +GeographyPoint GeoPoint::location
+  +UUID GeoPoint::metadata
+  +Float distance
+}
+class NearbyPoints {
+<<Service>>
+  +GeoJSON origin
+  +Float radiusMi
+  +Int first
+  +Int last
+  +Int offset
+  +Cursor before
+  +Cursor after
+}
+class Hotel {
+ -UUID id
++String name
+-Int objectid
+}
+GeoPoint *-- GeoPointType: Composition
+GeoPoint *-- GeographyPoint: Composition
+GeoPoint "1" <|-- "1" NearbyPoint: Implements
+NearbyPoints "1" -- "0..n"NearbyPoint: Contains
+Hotel "1" -- "1" GeoPoint: May Contain
+`
+}</DiagramBox>
+
+## Project description
+It is required to develop from scratch an autonomous, non-profit (subsidized) educational platform aimed at raising the level of awareness of people with certain technologies in the field of software development. Using game forms of learning.
+
+The authors prepare educational material, which is packaged in the "life story" presentation format and published on the platform, after which it becomes available for independent study by an interested person.
+
+The student "lives" (independently selected for study) educational material (theory and practice) prepared in the form of a "life story"; upon successful completion of the assignments, he receives an award.
+
+
+## The value of the platform for the consumer
+The learning process (familiarization) with the selected technology playfully takes place, which helps the person studying the material to become more involved in the learning process
